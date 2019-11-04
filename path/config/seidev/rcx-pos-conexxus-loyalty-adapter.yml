@@ -1,0 +1,19 @@
+server:
+  port: 9080
+tcp:
+  server:
+    port: 9998
+logging:
+  config: classpath:log4j2.yaml
+management:
+  health:
+    defaults:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        #include: "*"
+        include: env,info,health,configprops,refresh,bus-refresh,httptrace,integrationgraph,metrics,caches
+maxmessagesize: 209715222
+enable.rest.endpoints: true
+loyaltyEndpoint: https://rcx-sei-proxy.dev.rcx-sei.lmvi.net/service/pos
